@@ -1,0 +1,23 @@
+<h1>High and Low Game</h1><br>
+
+<%= image_tag(@leftcard) %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<%= image_tag(@rightcard) %><br><br>
+
+<% if @leftcard < @rightcard %>
+    <% result = "high" %>
+<% elsif @leftcard > @rightcard %>
+    <% result = "low" %>
+<% else %>
+     <% result = @radio %>
+<% end %>
+
+<% if @radio == result %>
+    <p>You win!!</p>
+<% else %>
+    <p>You lose... </p>
+<% end %>
+
+<br><br>
+
+<%= button_to "もう一度挑戦！！", {controller: 'cards', action: 'index'}, {method: :get, class: "btn btn-default"} %>
+<%# button_toは自動的にpost送信になる。getを指定する。%>
