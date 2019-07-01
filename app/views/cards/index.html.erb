@@ -1,21 +1,22 @@
-<h1>High and Low Game</h1><br>
-
+<br><br>
     <%= image_tag(@leftcard) %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   　 <%#左側に表示させたカードを、result.html.erbにも表示させたい%>
    
-       <%= image_tag("bg.png")  %><br><br>
+    <%= image_tag("bg.png")  %><br><br>
     
     <%=form_tag("/result") do %>
        
-       <%= radio_button_tag("radio", "high") %>High&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <%= radio_button_tag("radio", "high", required:"required") %>High&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         
-        <%= radio_button_tag("radio", "low") %>Low<br>
+        <%= radio_button_tag("radio", "low", required:"required") %>Low<br>
         
         <%= hidden_field_tag :leftcard, @leftcard %><br>
         
-        <p class = "selection">「high」か「low」どちらかを選択</p><br>
+        <h3>「high」か「low」どちらかを選択</h3><br>
     
-       <%= submit_tag "決定", class: "btn btn-default btn-lg" %>
+       <%= submit_tag "決定", class: "btn btn-default btn-lg" %><br><br>
        
      <% end %>
+     
+     
 

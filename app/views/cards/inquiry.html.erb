@@ -1,0 +1,36 @@
+<h2>お問い合わせフォーム</h2><br><br>
+
+    <div class = "container inquiry">
+        <div class = "row">
+            
+            <div class = "col-md-6">
+                <div class = "content">
+                <h3>High and Low Gameをご利用いただき、<br>ありがとうございます。</h3>
+                <h3>不明点や、ご質問などありましたら、<br>フォームよりご連絡ください。</h3><br><br>
+                
+                <h3>いただきましたご意見やご質問は、<br>メールにてお返事いたします。</h3><br><br>
+                </div>
+            </div>
+        
+            <div class = "col-md-6 form">
+                <%= form_tag("/opinion") do %>
+                    <div class = "form-group">
+                        <%= label_tag "form-name", "お名前（必須）" %>
+                        <%= text_field :form, :name, id: "form-name", class:"form-control", placeholder:"お名前" %>
+                    </div>
+                    <div class = "form-group">
+                        <%= label_tag "form-email", "メールアドレス（必須）" %>
+                        <%= email_field :form, :email, id: "form-email", class:"form-control", placeholder:"メールアドレス" %>
+                    </div>
+                    <div class = "form-group">
+                        <%= label_tag "form-content", "お問い合わせ内容（必須）" %>
+                        <%= text_area :form, :content, :size => "20x10", id: "form-content", class: "form-control", placeholder: "お問い合わせ内容を入力" %>
+                    </div>
+                    <%= submit_tag "送信", class:"btn btn-default btn-lg" %>
+                <% end %>
+            </div>
+        
+        </div>
+    </div>
+
+

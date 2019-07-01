@@ -13,4 +13,21 @@ class CardsController < ApplicationController
         @rightcard = @rightcards.sample
         @radio = params[:radio]
     end
+    
+    def rule
+        
+    end
+    
+    def inquiry
+        
+    end
+    
+    def opinion
+        @inquiry = Inquiry.create(name:params["form"]["name"], email:params["form"]["email"], content:params["form"]["content"])
+        if @inquiry.save
+            render action: :opinion
+        else
+            render plain: "エラーです。戻るボタンを押して、必須事項を入力してください。"
+        end
+    end
 end
