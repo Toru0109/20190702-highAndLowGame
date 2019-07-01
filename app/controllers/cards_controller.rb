@@ -27,7 +27,7 @@ class CardsController < ApplicationController
         if @inquiry.save
             render action: :opinion
         else
-            render plain: "エラーです。戻るボタンを押して、必須事項を入力してください。"
+            render action: :inquiry
         end
     end
 end
