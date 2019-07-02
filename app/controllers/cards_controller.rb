@@ -23,8 +23,9 @@ class CardsController < ApplicationController
     end
     
     def opinion
-        @inquiry = Inquiry.create(name:params["form"]["name"], email:params["form"]["email"], content:params["form"]["content"])
-        if @inquiry.save
+        inquiry = Inquiry.new(name:params["form"]["name"], email:params["form"]["email"], content:params["form"]["content"])
+        
+       if inquiry.save
             render action: :opinion
         else
             render action: :inquiry
