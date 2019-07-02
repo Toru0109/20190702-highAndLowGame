@@ -23,6 +23,7 @@ class CardsController < ApplicationController
     end
     
     def opinion
-        Inquiry.create(name:params["form"]["name"], email:params["form"]["email"], content:params["form"]["content"])
+        inquiry = Inquiry.create(name:params["form"]["name"], email:params["form"]["email"], content:params["form"]["content"])
+        inquiry.save
     end
 end
