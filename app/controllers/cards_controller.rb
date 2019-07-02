@@ -23,8 +23,12 @@ class CardsController < ApplicationController
     end
     
     def opinion
-       Inquiry.new(name:params["form"]["name"], email:params["form"]["email"], content:params["form"]["content"])
+        inquiry = Inquiry.new(name:params["form"]["name"], email:params["form"]["email"], content:params["form"]["content"])
         
-      　
+      　if inquiry.save
+            render action: :opinion
+        else
+            render action: :inquiry
+        end
     end
 end
